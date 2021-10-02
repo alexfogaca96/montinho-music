@@ -12,6 +12,7 @@ client.on('ready', () => {
 })
 
 client.on('message', async msg => {
+  if (msg.author.bot || !msg.content) return;
   const messageParts = msg.content.split(' ')
   console.log(`[${new Date()}]: ${messageParts}`)
   switch (messageParts[0]) {
