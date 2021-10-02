@@ -28,7 +28,6 @@ client.once('ready', async () => {
     global: { log: true }
   })
   await client.initApplicationPermissions()
-
   console.log('Bot started')
 })
 
@@ -39,4 +38,4 @@ client.on('interactionCreate', (interaction: Interaction) => {
 client.on('messageCreate', (message: Message) => {
   client.executeCommand(message)
 })
-client.login(process.env.BOT_TOKEN ?? '') // provide your bot token
+client.login(process.env.BOT_TOKEN ?? '')
