@@ -1,6 +1,9 @@
-require('dotenv').config()
-import { Client } from 'discord.js'
-import { get } from 'axios'
+import dotenv from "dotenv";
+dotenv.config();
+
+import { Client } from 'discord.js';
+import pkg from 'axios';
+const { get } = pkg;
 
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] })
 
