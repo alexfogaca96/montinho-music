@@ -1,0 +1,18 @@
+{
+  "extends": ["tslint-config-airbnb"],
+  "indent": [true, "tabs", 2],
+  "rules": {
+    "max-line-length": [true, 120],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "never",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
+    "variable-name": [true, "allow-leading-underscore"],
+    "semicolon": false,
+    "ter-arrow-parens": [true, "as-needed"]
+  }
+}
