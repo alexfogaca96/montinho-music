@@ -1,9 +1,9 @@
-import dotenv from "dotenv";
-dotenv.config();
+import dotenv from 'dotenv'
+dotenv.config()
 
-import { Client } from 'discord.js';
-import pkg from 'axios';
-const { get } = pkg;
+import { Client } from 'discord.js'
+import pkg from 'axios'
+const { get } = pkg
 
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] })
 
@@ -12,7 +12,7 @@ client.on('ready', () => {
 })
 
 client.on('message', async msg => {
-  if (msg.author.bot || !msg.content) return;
+  if (msg.author.bot || !msg.content) return
   const messageParts = msg.content.split(' ')
   console.log(`[${new Date()}]: ${messageParts}`)
   switch (messageParts[0]) {
