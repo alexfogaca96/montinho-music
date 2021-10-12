@@ -1,20 +1,17 @@
-import {
-  Discord,
-  SimpleCommand,
-  SimpleCommandMessage,
-  SimpleCommandOption,
-} from "discordx";
+import { Discord, SimpleCommand, SimpleCommandMessage, SimpleCommandOption } from 'discordx'
 
 @Discord()
 class PlayYoutubeCommand {
-  @SimpleCommand("pog", { aliases: ["p", "play"], argSplitter: " " })
-  playYoutube(
-    @SimpleCommandOption("url") url: string,
-    command: SimpleCommandMessage
-  ) {
-    if (!url) {
-      return command.message.reply(`Acho que faltou a url 🤔 ex: '!pog https://www.youtube.com/watch?v=dQw4w9WgXcQ'`);
+  @SimpleCommand('pog', { aliases: ['p', 'play'] })
+  playYoutube(command: SimpleCommandMessage) {
+    if (!command.argString) {
+      return command.message.reply(
+        `Acho que você esqueceu de mandar o parâmetro do comando 🤔
+        '!pog rick roll'
+        '!pog https://www.youtube.com/watch?v=dQw4w9WgXcQ'`
+      )
     }
-    return command.message.reply(`Funcionalidade ainda não implementada... 😥`);
+    console.log(`Arguments: ${command.argString}`)
+    return command.message.reply(`Funcionalidade ainda não implementada... 😥`)
   }
 }
